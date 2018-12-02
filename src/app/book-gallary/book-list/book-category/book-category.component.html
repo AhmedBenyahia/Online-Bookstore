@@ -1,0 +1,68 @@
+ <!--<div class="card">-->
+    <!--<article class="card-group-item">-->
+      <!--<header class="card-header"><h6 class="title"> Category </h6></header>-->
+      <!--<div class="filter-content">-->
+        <!--<div class="list-group list-group-flush">-->
+          <!--<a *ngFor="let category of bookCat" class="list-group-item">{{category}} <span class="float-right badge badge-light round">142</span> </a>-->
+         <!--</div>  &lt;!&ndash; list-group .// &ndash;&gt;-->
+      <!--</div>-->
+    <!--</article> &lt;!&ndash; card-group-item.// &ndash;&gt;-->
+  <!--</div> &lt;!&ndash; card.// &ndash;&gt;-->
+
+ <br>
+
+   <div class="card">
+     <article class="card-group-item">
+       <header class="card-header">
+         <h6 class="title">Range input </h6>
+       </header>
+       <div class="filter-content">
+         <div class="card-body">
+           <div class="form-row">
+             <div class="form-group col-md-6">
+               <label>Min</label>
+               <input type="number" class="form-control" id="inputEmail4" placeholder="$0">
+             </div>
+             <div class="form-group col-md-6 text-right">
+               <label>Max</label>
+               <input type="number" class="form-control" placeholder="$1,0000">
+             </div>
+           </div>
+         </div> <!-- card-body.// -->
+       </div>
+     </article> <!-- card-group-item.// -->
+     <article class="card-group-item">
+       <header class="card-header">
+         <h6 class="title">category </h6>
+       </header>
+       <div class="filter-content">
+         <div class="card-body">
+           <div *ngFor="let category of bookCat" class="custom-control custom-checkbox">
+             <span class="float-right badge badge-light round">7</span>
+             <input type="checkbox" class="custom-control-input" id={{category}}>
+             <label class="custom-control-label" for={{category}}>{{category}}</label>
+           </div> <!-- form-check.// -->
+         </div> <!-- card-body.// -->
+       </div>
+     </article> <!-- card-group-item.// -->
+   </div> <!-- card.// -->
+
+
+ <br>
+
+ <div class="card">
+   <article class="card-group-item">
+     <header class="card-header">
+       <h6 class="title">Writer </h6>
+     </header>
+     <div class="filter-content">
+       <div class="card-body">
+         <div *ngFor="let category of bookCat" class="custom-control custom-checkbox">
+           <span class="float-right badge badge-light round">7</span>
+           <input type="checkbox" class="custom-control-input" >
+           <label class="custom-control-label">writer</label>
+         </div> <!-- form-check.// -->
+       </div> <!-- card-body.// -->
+     </div>
+   </article> <!-- card-group-item.// -->
+ </div> <!-- card.// -->

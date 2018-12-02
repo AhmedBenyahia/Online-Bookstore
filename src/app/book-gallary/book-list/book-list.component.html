@@ -1,0 +1,59 @@
+
+
+
+
+<div class="container">
+  <!--TODO: add search logic-->
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="search-box">
+      <input class="search-txt" type="text" name="" placeholder="Type to search">
+      <a class="search-btn" href="#">
+        <i class="fas fa-search"></i>
+      </a>
+    </div>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  </div>
+  <div class="row">
+    <div class="col-lg-3">
+      <!--TODO: add sort logic-->
+          <div class="form-group col-md-6 ">
+            <div class="dropdown">
+              <button class="form-control dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Sort By
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button">Action</button>
+                <button class="dropdown-item" type="button">Another action</button>
+                <button class="dropdown-item" type="button">Something else here</button>
+              </div>
+            </div>
+         </div>
+      <app-book-category [bookCategory]="bookCat"></app-book-category>
+
+    </div>
+
+    <div class="col-lg-9 ">
+
+      <div class="row">
+        <app-book-cart class="col-lg-4 col-md-6 mb-4" *ngFor="let book of books" [book-info]="book"></app-book-cart>
+      </div>
+      <!-- /.row -->
+
+    </div>
+
+
+    <div class="container">
+
+
+    </div>
+    <!-- /.col-lg-9 -->
+
+  </div>
+  <!-- /.row -->
+
+</div>
+
+
+

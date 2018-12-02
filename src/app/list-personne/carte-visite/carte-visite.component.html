@@ -1,0 +1,112 @@
+<!--<div class="container">-->
+
+      <div class="col-md-4 col-sm-6">
+        <div  class="card-container manual-flip " [class.hover]="isActive" >
+          <div class="card">
+            <div class="front">
+              <div class="carte-visite-form" [class.hidden]="isEditable">
+                <form class="" >
+                  <div class="form-group">
+                    <label for="full-name">Full Name: </label><br>
+                    <input [(ngModel)]="personne.name" [ngModelOptions]="{standalone: true}" type="text" id="full-name">
+                  </div>
+                  <div class="form-group">
+                    <label for="job">Job: </label><br>
+                    <input [(ngModel)]="personne.position" [ngModelOptions]="{standalone: true}" type="text" id="job">
+                  </div>
+                  <div class="form-group">
+                    <label for="per-image">Image: </label><br>
+                    <input [(ngModel)]="personne.profileImg" [ngModelOptions]="{standalone: true}" type="text" id="per-image">
+                  </div>
+                  <div class="form-group">
+                    <label for="cit-fav">Citation favorite: </label><br>
+                    <input [(ngModel)]="personne.logo" [ngModelOptions]="{standalone: true}" type="text" id="cit-fav">
+                  </div>
+                  <div class="form-group">
+                    <label for="job-des">Job Description: </label><br>
+                    <input [(ngModel)]="personne.jobDescription" [ngModelOptions]="{standalone: true}" type="text" id="job-des">
+                  </div>
+                  <div class="form-group">
+                    <label for="job-key">Job key word: </label><br>
+                    <input [(ngModel)]="personne.jobKeyWord" [ngModelOptions]="{standalone: true}" type="text" id="job-key">
+                  </div>
+
+                  <button class="btn btn-primary" (click)="editCard();doubleRotateCard();">Submit</button>
+                </form>
+              </div>
+              <div class="carte-visite" [class.hidden]="!isEditable">
+                <div class="cover">
+                  <img src="../../../assets/images/rotating_card_thumb2.png"/>
+                </div>
+                <div class="user">
+                  <img class="img-circle" [src]=personne.profileImg />
+                </div>
+                <div class="content">
+                  <div class="main">
+                    <h3 class="name">{{ personne.name }}</h3>
+                    <p class="profession">{{ personne.position }}</p>
+                    <p class="text-center">{{ personne.personalDescription}}</p>
+                  </div>
+                  <div class="footer">
+                    <button class="btn btn-simple flip-back" (click) ="rotateCard()">
+                        <i class="fa fa-mail-forward"></i> Manual Rotation
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- end front panel -->
+            <div class="back">
+              <div class="header">
+                <h5 class="motto">{{ personne.logo}}</h5>
+              </div>
+              <div class="content">
+                <div class="main">
+                  <h4 class="text-center">{{ personne.jobDescription}}</h4>
+                  <p class="text-center">{{ personne.jobKeyWord}}</p>
+
+                  <div class="stats-container">
+                    <div class="stats">
+                      <h4>{{ personne.nbreFollower}}</h4>
+                      <p>
+                        Followers
+                      </p>
+                    </div>
+                    <div class="stats">
+                      <h4>{{ personne.nbreFollowing}}</h4>
+                      <p>
+                        Following
+                      </p>
+                    </div>
+                    <div class="stats">
+                      <h4>{{ personne.nbreProject}}</h4>
+                      <p>
+                        Projects
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="footer">
+                <button class="btn btn-simple flip-back" rel="tooltip" title="Flip Card" (click)="rotateCard()">
+                  <i class="fa fa-reply"></i> Back
+                </button>
+                <div class="social-links text-center">
+                  <a [href]= personne.facebookUrl class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                  <a href="http://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                  <a href="http://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                </div>
+                <button class="btn btn-simple edit-cart" rel="tooltip" (click)="editCard();rotateCard()">
+                  <i class="fa fa-pencil" aria-hidden="true"></i> Edit
+                </button>
+              </div>
+            </div> <!-- end b ack panel -->
+          </div> <!-- end card -->
+        </div> <!-- end card-container -->
+      </div> <!-- end col sm 3 -->
+      <!--         <div class="col-sm-1"></div> -->
+
+    <!--</div> &lt;!&ndash; end col-sm-10 &ndash;&gt;-->
+
+  <div class="space-20"></div>
+

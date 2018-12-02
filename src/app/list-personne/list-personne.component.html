@@ -1,0 +1,4 @@
+<div class="col-sm-8">
+<!--<app-carte-visite  [personneInfo]="personnes[1]"></app-carte-visite>-->
+<app-carte-visite *ngFor="let personne of personnes " [personneInfo]="personne"></app-carte-visite>
+</div>
