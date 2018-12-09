@@ -12,7 +12,7 @@ export class AuthService {
   login(username: String, password:  String ) {
      this.http.get(this.urlAuth + username + '/' + password, {responseType: 'text'})
       .subscribe((response) => {
-        if (response) {
+        if (response.substr(0,5) === 'Bearer') {
           localStorage.setItem('token', response.substr(6) );
           console.log(response.substr(6));
         }

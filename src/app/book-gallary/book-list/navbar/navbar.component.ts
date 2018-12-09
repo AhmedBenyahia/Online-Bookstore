@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ViewEncapsulation} from '@angular/cli/lib/config/schema';
 import {ChartService} from '../../../service/chart.service';
 import {Book} from '../../../model/Book';
-import {AuthService} from '../../../auth.service';
+import {AuthService} from '../../../service/auth.service';
 
 @Component({
   selector: 'app-navbar',
