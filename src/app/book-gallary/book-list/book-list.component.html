@@ -3,18 +3,6 @@
 
 
 <div class="container">
-  <!--TODO: add search logic-->
-  <div class="row h-100 justify-content-center align-items-center">
-    <div class="search-box">
-      <input class="search-txt" type="text" name="" placeholder="Type to search">
-      <a class="search-btn" href="#">
-        <i class="fas fa-search"></i>
-      </a>
-    </div>
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
-  </div>
   <div class="row">
     <div class="col-lg-3">
       <!--TODO: add sort logic-->
@@ -24,13 +12,16 @@
                 Sort By
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <button class="dropdown-item" type="button">Action</button>
-                <button class="dropdown-item" type="button">Another action</button>
-                <button class="dropdown-item" type="button">Something else here</button>
+                <button class="dropdown-item" type="button">Title</button>
+                <button class="dropdown-item" type="button">Writer</button>
+                <button class="dropdown-item" type="button">Release Year</button>
+                <button class="dropdown-item" type="button">Most Sell</button>
               </div>
             </div>
          </div>
-      <app-book-category [bookCategory]="bookCat"></app-book-category>
+
+      <!--TODO: add sort-->
+      <app-book-filter [bookCategory]="bookCat" [bookAuthor]="authors"></app-book-filter>
 
     </div>
 

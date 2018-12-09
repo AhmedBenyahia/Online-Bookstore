@@ -14,7 +14,7 @@
    <div class="card">
      <article class="card-group-item">
        <header class="card-header">
-         <h6 class="title">Range input </h6>
+         <h6 class="title">Range Price </h6>
        </header>
        <div class="filter-content">
          <div class="card-body">
@@ -57,10 +57,10 @@
      </header>
      <div class="filter-content">
        <div class="card-body">
-         <div *ngFor="let category of bookCat" class="custom-control custom-checkbox">
+         <div *ngFor="let author of bookAuth" class="custom-control custom-checkbox">
            <span class="float-right badge badge-light round">7</span>
            <input type="checkbox" class="custom-control-input" >
-           <label class="custom-control-label">writer</label>
+           <label class="custom-control-label">{{author}}</label>
          </div> <!-- form-check.// -->
        </div> <!-- card-body.// -->
      </div>

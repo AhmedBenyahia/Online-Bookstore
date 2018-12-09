@@ -1,0 +1,98 @@
+
+<!--<link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/hub/1-4-0/css/style.default.css" id="theme-stylesheet">-->
+<!--<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">-->
+<!--<link href="https://d19m59y37dris4.cloudfront.net/hub/1-4-0/css/custom-fonticons.css" rel="stylesheet">-->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <!--TODO: change icon-->
+    <!-- Navbar Header  --><a href="index.html" class="navbar-brand"><img src="" alt="..."></a>
+    <button type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+    <!-- Navbar Collapse -->
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item dropdown"><a id="navbarHomeLink" href="index.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link active">Home<i class="fa fa-angle-down"></i></a>
+          <ul aria-labelledby="navbarDropdownHomeLink" class="dropdown-menu">
+            <li><a href="index.html" class="dropdown-item">Classic Home</a></li>
+            <li><a href="indropdown-toggledex2.html" class="dropdown-item">Parallax sections</a></li>
+            <li><a href="index3.html" class="dropdown-item">Video background                     </a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="category.html" class="nav-link">Shop</a>
+        </li>
+        <!-- Multi level dropdown    -->
+        <li class="nav-item dropdown"><a id="navbarDropdownMenuLink" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">Dropdown<i class="fa fa-angle-down"></i></a>
+          <ul aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
+            <li><a href="#" class="dropdown-item">Action</a></li>
+            <li><a href="#" class="dropdown-item">Another action</a></li>
+            <li class="dropdown-submenu"><a id="navbarDropdownMenuLink2" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">Dropdown link<i class="fa fa-angle-down"></i></a>
+              <ul aria-labelledby="navbarDropdownMenuLink2" class="dropdown-menu">
+                <li><a href="#" class="dropdown-item">Action</a></li>
+                <li class="dropdown-submenu"><a id="navbarDropdownMenuLink3" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
+
+                  Another action<i class="fa fa-angle-down"></i></a>
+                  <ul aria-labelledby="navbarDropdownMenuLink3" class="dropdown-menu">
+                    <li><a href="#" class="dropdown-item">Action</a></li>
+                    <li><a href="#" class="dropdown-item">Action</a></li>
+                    <li><a href="#" class="dropdown-item">Action</a></li>
+                    <li><a href="#" class="dropdown-item">Action</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="dropdown-item">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <!-- Multi level dropdown end-->
+        <li class="nav-item"><a href="blog.html" class="nav-link">Blog </a>
+        </li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a>
+        </li>
+      </ul>
+      <div class="right-col d-flex align-items-lg-center flex-column flex-lg-row">
+        <!-- Search Button-->
+        <!--<div class="search"><i class="icon-search"></i></div>-->
+        <!--TODO: add search logic-->
+        <div class="row h-100 justify-content-center align-items-center">
+          <div class="search-box">
+            <input class="search-txt" type="text" name="" placeholder="Type to search">
+            <a class="search-btn" href="#">
+              <i class="fas fa-search"></i>
+            </a>
+          </div>
+
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+        </div>
+        <!-- User Not Logged - link to login page-->
+        <div class="user"> <a id="userdetails" href="customer-login.html" class="user-link"><i class="icon-profile">                   </i></a></div>
+        <!-- Cart Dropdown-->
+        <div class="cart dropdown show">
+          <a id="cartdetails" href="https://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="icon-cart"></i>
+            <div class="cart-no"> {{this.charService.nbreBook()}}</div>
+          </a>
+            <a href="cart.html" class="text-primary view-cart"></a>
+          <div aria-labelledby="cartdetails" class="dropdown-menu">
+            <!-- cart item-->
+            <div class="dropdown-item cart-product">
+              <div class="d-flex align-items-center">
+                <!--<div class="img"><img src="https://d19m59y37dris4.cloudfront.net/hub/1-4-0/img/hoodie-man-1.png" alt="..." class="img-fluid"></div>-->
+                <div class="details  justify-content-between">
+                  <div class="text" *ngFor="let char of chart">
+                    <a href="#"><strong>{{ char.title}}</strong></a>
+                    <span class="price">${{char.price}} </span>
+                  </div>
+                  <br>
+                  <a href="#" class="delete"><i class="fa fa-trash-o"></i></a>
+                </div>
+              </div>
+            </div>
+            <!-- total price-->
+            <div class="dropdown-item total-price d-flex justify-content-between"><span>Total</span><strong class="text-primary">${{ this.charService.totalPrice() }}</strong></div>
+            <!-- call to actions-->
+            <!--<div class="dropdown-item CTA d-flex"><a href="cart.html" class="btn btn-template wide">View Cart</a><a href="checkout1.html" class="btn btn-template wide">Checkout</a></div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

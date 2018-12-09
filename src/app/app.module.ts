@@ -11,7 +11,9 @@ import { BookListComponent } from './book-gallary/book-list/book-list.component'
 import { BookCartComponent } from './book-gallary/book-list/book-cart/book-cart.component';
 import { BookGallaryComponent } from './book-gallary/book-gallary.component';
 import { BookCategoryComponent } from './book-gallary/book-list/book-category/book-category.component';
-import { BookSearchBarComponent } from './book-search-bar/book-search-bar.component';
+import { BookSearchBarComponent } from './book-gallary/book-list/book-search-bar/book-search-bar.component';
+import { NavbarComponent } from './book-gallary/book-list/navbar/navbar.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { BookSearchBarComponent } from './book-search-bar/book-search-bar.compon
     BookCartComponent,
     BookGallaryComponent,
     BookCategoryComponent,
-    BookSearchBarComponent
+    BookSearchBarComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

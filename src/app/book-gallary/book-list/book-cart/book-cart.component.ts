@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Book} from '../Book';
+import {Book} from '../../../model/Book';
+import {ChartService} from '../../../service/chart.service';
 
 @Component({
   selector: 'app-book-cart',
@@ -7,9 +8,12 @@ import {Book} from '../Book';
   styleUrls: ['./book-cart.component.css']
 })
 export class BookCartComponent  {
-@Input('book-info') book: Book ;
-  // book = new Book('The imposible', '12 Jeu 1998', 'Good Book',
-  //   'Ahmed benyahia', 5, 10,
-  //   ['Action'], '../../assets/images/rotating_card_thumb.jpg');
+  @Input('book-info') book: Book ;
 
+  constructor(private charService: ChartService) {}
+
+  buyBook() {
+    this.charService.addToChart(this.book);
+    console.log('buying');
+  }
 }
