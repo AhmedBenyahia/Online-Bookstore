@@ -5,33 +5,44 @@ export class Book {
   }
 
   get imgURL(): string {
-    return this._imgURL;
+    return this._imgUrl;
   }
 
   set imgURL(value: string) {
-    this._imgURL = value;
+    this._imgUrl = value;
   }
   private static _bookCount = 0;
   private _title: string;
   private _id: number;
   private _datePub: string;
   private _description: string;
-  private _writer: string;
+  private _author: string;
   private _price: number;
-  private _imgURL: string;
+  private _imgUrl: string;
+  private _available: number;
+  private _categories: string [];
 
   constructor(title: string, datePub: string, description: string,
-              writer: string, price: number, available: number,
+              author: string, price: number, available: number,
               categories: string[],
-              imgURL: string) {
+              imgUrl: string) {
     this._title = title;
     this._id = Book._bookCount++;
     this._datePub = datePub;
     this._description = description;
-    this._writer = writer;
+    this._author = author;
     this._price = price;
     this._available = available;
     this._categories = categories;
+    this._imgUrl = imgUrl;
+  }
+
+  get imgUrl(): string {
+    return this._imgUrl;
+  }
+
+  set imgUrl(value: string) {
+    this._imgUrl = value;
   }
 
   get title(): string {
@@ -66,12 +77,12 @@ export class Book {
     this._description = value;
   }
 
-  get writer(): string {
-    return this._writer;
+  get author(): string {
+    return this._author;
   }
 
-  set writer(value: string) {
-    this._writer = value;
+  set author(value: string) {
+    this._author = value;
   }
 
   get price(): number {
@@ -98,7 +109,6 @@ export class Book {
     this._categories = value;
   }
 
-  private _available: number;
-  private _categories: string [];
+
 
 }

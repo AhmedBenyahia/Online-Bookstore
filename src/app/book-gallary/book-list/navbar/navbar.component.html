@@ -64,7 +64,13 @@
 
         </div>
         <!-- User Not Logged - link to login page-->
-        <div class="user"> <a id="userdetails" href="customer-login.html" class="user-link"><i class="icon-profile">                   </i></a></div>
+        <div class="user">
+          <a id="userdetails"
+             class="user-link"
+              (click)="onUserLogin('syto','154758168')">
+            <i class="icon-profile"></i>
+          </a>
+        </div>
         <!-- Cart Dropdown-->
         <div class="cart dropdown show">
           <a id="cartdetails" href="https://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="icon-cart"></i>

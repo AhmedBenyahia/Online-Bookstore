@@ -19,23 +19,23 @@ export class BookListComponent implements OnInit {
     this.serviceBook.getAll().subscribe(
       response => {
 
-        console.log(response);
+        // console.log(response);
         for ( const book of (response as Book[])) {
           this.books.push(new Book(book.title, book.datePub, book.description, book.author,
             book.price, book.available, book.categories, book.imgUrl))   ;
             this.authors.push(book['author']);
         }
-        console.log(this.books);
-        console.log('yoyo' + this.authors);
+        // console.log(this.books);
+        // console.log('yoyo' + this.authors);
       }
     );
 
     this.serviceBook.getAllTag().subscribe(
       response => {
-        console.log(response);
+        // console.log(response);
         for (const tag of (response as {'id', 'description'}[])) {
           this.bookCat.push(tag.description);
-          console.log(tag);
+          // console.log(tag);
         }
     });
 
