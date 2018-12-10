@@ -10,12 +10,17 @@ export class AuthService {
 
   private urlAuth = 'http://localhost:8080/auth/login/';
   login(username: String, password:  String ) {
-     this.http.get(this.urlAuth + username + '/' + password, {responseType: 'text'})
+    this.http.get(this.urlAuth + username + '/' + password, {responseType: 'text'})
       .subscribe((response) => {
-        if (response.substr(0,5) === 'Bearer') {
+        console.log(response.substr(6));
+        if (response.substr(0, 6) === 'Bearer') {
           localStorage.setItem('token', response.substr(6) );
           console.log(response.substr(6));
         }
       });
+  }
+
+  logout() {
+    localStorage.getItem('token');
   }
 }

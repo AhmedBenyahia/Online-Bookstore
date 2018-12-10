@@ -1,2 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 /*@import "~bootstrap/dist/css/bootstrap.css";*/
+body{
+  background: url("https://images.myguide-cdn.com/content/1/large/algarve-books-blogs-and-magazines-424447.jpg") no-repeat center center fixed;
+  background-size:cover  ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+
+  padding:10px;
+}

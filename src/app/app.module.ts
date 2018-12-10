@@ -13,7 +13,10 @@ import { BookGallaryComponent } from './book-gallary/book-gallary.component';
 import { BookCategoryComponent } from './book-gallary/book-list/book-category/book-category.component';
 import { BookSearchBarComponent } from './book-gallary/book-list/book-search-bar/book-search-bar.component';
 import { NavbarComponent } from './book-gallary/book-list/navbar/navbar.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {RefreshTokenInterceptor} from './service/refresh-token-interceptor.service';
+import { LoginComponent } from './login/login.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import {HttpClientModule} from '@angular/common/http';
     BookGallaryComponent,
     BookCategoryComponent,
     BookSearchBarComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,13 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RefreshTokenInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
