@@ -5,23 +5,24 @@ import {BookGallaryComponent} from './book-gallary/book-gallary.component';
 import {LoginComponent} from './login/login.component';
 import {CreateAccountComponent} from './create-account/create-account.component';
 import {NotFoundComponent} from './not-found/not-found.component';
+import {AdminComponent} from './admin/admin.component';
 
 const routes: ({ path: string; component: any })[] = [
-    {
-      path: '/home',
+  {
+      path: '',
       component: BookGallaryComponent
     },
     {
-      path: '/login',
+      path: 'login',
       component: LoginComponent
     },
     {
-      path: '/create_account',
+      path: 'create_account',
       component: CreateAccountComponent
     },
     {
-      path: '/admin',
-      component: /AdminComponent
+      path: 'admin',
+      component: AdminComponent
     },
     {
       path: '**',

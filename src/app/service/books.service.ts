@@ -125,6 +125,25 @@ export class BooksService {
     // console.log(this.origineBooksSet.size);
   }
 
+  filterName(name: String) {
+    if (this.isActivePriceFilter === false) {
+      this.isActivePriceFilter = true ;
+      this.booksSet.forEach( book => {
+        this.origineBooksSet.add(book) ;
+      });
+      console.log(this.booksSet.size);
+      console.log(this.origineBooksSet.size);
+    }
+    this.booksSet.clear() ;
+    this.origineBooksSet.forEach(
+      (book: Book) => {
+        if ((book.title as String).includes(name)) {
+          this.booksSet.add(book);
+        }
+      }
+    );
+  }
+
 
 
   get sortby(): string {

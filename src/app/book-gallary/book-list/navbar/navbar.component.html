@@ -10,42 +10,28 @@
     <!-- Navbar Collapse -->
     <div id="navbarCollapse" class="collapse navbar-collapse">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item dropdown"><a id="navbarHomeLink" href="index.html" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link active">Home<i class="fa fa-angle-down"></i></a>
-          <ul aria-labelledby="navbarDropdownHomeLink" class="dropdown-menu">
-            <li><a href="index.html" class="dropdown-item">Classic Home</a></li>
-            <li><a href="indropdown-toggledex2.html" class="dropdown-item">Parallax sections</a></li>
-            <li><a href="index3.html" class="dropdown-item">Video background                     </a></li>
-          </ul>
+        <li class="nav-item dropdown">
+          <a id="navbarHomeLink"
+             routerLink="/"
+             routerLinkActive="active"
+             class="nav-link">Home
+            <i class="fa fa-angle-down"></i>
+          </a>
         </li>
-        <li class="nav-item"><a href="category.html" class="nav-link">Shop</a>
+        <li class="nav-item">
+          <a href="category.html"
+             class="nav-link"
+             routerLink="/admin"
+             routerLinkActive="active">
+            Admin Page
+          </a>
         </li>
-        <!-- Multi level dropdown    -->
-        <li class="nav-item dropdown"><a id="navbarDropdownMenuLink" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">Dropdown<i class="fa fa-angle-down"></i></a>
-          <ul aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-            <li><a href="#" class="dropdown-item">Action</a></li>
-            <li><a href="#" class="dropdown-item">Another action</a></li>
-            <li class="dropdown-submenu"><a id="navbarDropdownMenuLink2" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">Dropdown link<i class="fa fa-angle-down"></i></a>
-              <ul aria-labelledby="navbarDropdownMenuLink2" class="dropdown-menu">
-                <li><a href="#" class="dropdown-item">Action</a></li>
-                <li class="dropdown-submenu"><a id="navbarDropdownMenuLink3" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
 
-                  Another action<i class="fa fa-angle-down"></i></a>
-                  <ul aria-labelledby="navbarDropdownMenuLink3" class="dropdown-menu">
-                    <li><a href="#" class="dropdown-item">Action</a></li>
-                    <li><a href="#" class="dropdown-item">Action</a></li>
-                    <li><a href="#" class="dropdown-item">Action</a></li>
-                    <li><a href="#" class="dropdown-item">Action</a></li>
-                  </ul>
-                </li>
-                <li><a href="#" class="dropdown-item">Something else here</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <!-- Multi level dropdown end-->
-        <li class="nav-item"><a href="blog.html" class="nav-link">Blog </a>
-        </li>
-        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a>
+        <li class="nav-item"><a
+          (click)="logoutUser()"
+
+          routerLinkActive="active"
+          class="nav-link">Logout</a>
         </li>
       </ul>
       <div class="right-col d-flex align-items-lg-center flex-column flex-lg-row">
@@ -54,7 +40,7 @@
         <!--TODO: add search logic-->
         <div class="row h-100 justify-content-center align-items-center">
           <div class="search-box">
-            <input class="search-txt" type="text" name="" placeholder="Type to search">
+            <input #titleBook (change)="serarchLogic(titleBook.value)" class="search-txt" type="text" name="" placeholder="Type to search">
             <a class="search-btn" href="#">
               <i class="fas fa-search"></i>
             </a>

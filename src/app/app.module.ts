@@ -20,6 +20,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { DminComponent } from './dmin/dmin.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
