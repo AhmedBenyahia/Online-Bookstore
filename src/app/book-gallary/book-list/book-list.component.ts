@@ -9,37 +9,22 @@ import {BooksService} from '../../service/books.service';
 })
 export class BookListComponent implements OnInit {
     constructor(private serviceBook: BooksService) {}
-    books: Book [] = [] ;
-    authors: string [] = [] ;
+    books = new Set() ;
+    authors =  new Set() ;
+    tags = new Set();
+    numberCheckedTag = 0;
+    numberCheckedAuthor = 0;
 
-
-  bookCat: string[] = [];
 
   ngOnInit(): void {
-    this.serviceBook.getAll().subscribe(
-      response => {
-
-        // console.log(response);
-        for ( const book of (response as Book[])) {
-          this.books.push(new Book(book.title, book.datePub, book.description, book.author,
-            book.price, book.available, book.categories, book.imgUrl))   ;
-            this.authors.push(book['author']);
-        }
-        // console.log(this.books);
-        // console.log('yoyo' + this.authors);
-      }
-    );
-
-    this.serviceBook.getAllTag().subscribe(
-      response => {
-        // console.log(response);
-        for (const tag of (response as {'id', 'description'}[])) {
-          this.bookCat.push(tag.description);
-          // console.log(tag);
-        }
-    });
-
-
+    this.books = this.serviceBook.getAllBooks();
+    this.authors = this.serviceBook.getAllAuthors();
+    this.tags = this.serviceBook.getAllTag();
+    console.log(this.tags);
   }
 
+
+  sortBooks(value: string) {
+    this.serviceBook.sortby = value;
+  }
 }

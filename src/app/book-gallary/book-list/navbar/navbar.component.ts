@@ -11,7 +11,7 @@ import {AuthService} from '../../../service/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private authService: AuthService, public charService: ChartService) { }
+  constructor(private authService: AuthService, private charService: ChartService) { }
   private chart: Book [] ;
   ngOnInit() {
     this.chart = this.charService.chart ;

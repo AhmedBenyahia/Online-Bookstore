@@ -21,11 +21,18 @@
            <div class="form-row">
              <div class="form-group col-md-6">
                <label>Min</label>
-               <input type="number" class="form-control" id="inputEmail4" placeholder="$0">
+               <input #min (change)="priceFiltering(min.value, max.value)"
+                      type="number"
+                      class="form-control"
+                      id="inputEmail4"
+                      placeholder="$0">
              </div>
              <div class="form-group col-md-6 text-right">
                <label>Max</label>
-               <input type="number" class="form-control" placeholder="$1,0000">
+               <input #max (change)="priceFiltering(min.value, max.value)"
+                      type="number"
+                      class="form-control"
+                      placeholder="$1,0000">
              </div>
            </div>
          </div> <!-- card-body.// -->
@@ -39,7 +46,7 @@
          <div class="card-body">
            <div *ngFor="let category of bookCat" class="custom-control custom-checkbox">
              <span class="float-right badge badge-light round">7</span>
-             <input type="checkbox" class="custom-control-input" id={{category}}>
+             <input #tagCheckBox (click)="onchangeTag(category,tagCheckBox.checked)" type="checkbox" class="custom-control-input" id={{category}}>
              <label class="custom-control-label" for={{category}}>{{category}}</label>
            </div> <!-- form-check.// -->
          </div> <!-- card-body.// -->
@@ -59,8 +66,8 @@
        <div class="card-body">
          <div *ngFor="let author of bookAuth" class="custom-control custom-checkbox">
            <span class="float-right badge badge-light round">7</span>
-           <input type="checkbox" class="custom-control-input" >
-           <label class="custom-control-label">{{author}}</label>
+           <input #authorCheckBox (click)="onchangeAuthor(author,authorCheckBox.checked)" type="checkbox" class="custom-control-input" id={{author}} (change)="updateAuthorsSet(author)">
+           <label class="custom-control-label" for="{{author}}"> {{author}}</label>
          </div> <!-- form-check.// -->
        </div> <!-- card-body.// -->
      </div>

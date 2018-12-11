@@ -12,16 +12,16 @@
                 Sort By
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <button class="dropdown-item" type="button">Title</button>
-                <button class="dropdown-item" type="button">Writer</button>
-                <button class="dropdown-item" type="button">Release Year</button>
-                <button class="dropdown-item" type="button">Most Sell</button>
+                <button #title class="dropdown-item" type="button" (click)="sortBooks(title.value)" value="Title">Title</button>
+                <button #author class="dropdown-item" type="button" (click)="sortBooks(author.value)" value="Author">Author</button>
+                <button #years class="dropdown-item" type="button" (click)="sortBooks(years.value)" value="Date">Release Year</button>
+                <button #price class="dropdown-item" type="button" (click)="sortBooks(price.value)" value="Price">Price</button>
               </div>
             </div>
          </div>
 
       <!--TODO: add sort-->
-      <app-book-filter [bookCategory]="bookCat" [bookAuthor]="authors"></app-book-filter>
+      <app-book-filter [bookCategory]="tags" [bookAuthor]="authors"></app-book-filter>
 
     </div>
 

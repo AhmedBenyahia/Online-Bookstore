@@ -17,6 +17,9 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {RefreshTokenInterceptor} from './service/refresh-token-interceptor.service';
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { DminComponent } from './dmin/dmin.component';
+import { AdminComponent } from './admin/admin.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     BookSearchBarComponent,
     NavbarComponent,
     LoginComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    DminComponent,
+    AdminComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

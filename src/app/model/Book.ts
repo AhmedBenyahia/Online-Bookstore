@@ -20,11 +20,11 @@ export class Book {
   private _price: number;
   private _imgUrl: string;
   private _available: number;
-  private _categories: string [];
+  private _tag: string [];
 
   constructor(title: string, datePub: string, description: string,
               author: string, price: number, available: number,
-              categories: string[],
+              tag: string[],
               imgUrl: string) {
     this._title = title;
     this._id = Book._bookCount++;
@@ -33,7 +33,7 @@ export class Book {
     this._author = author;
     this._price = price;
     this._available = available;
-    this._categories = categories;
+    this._tag = tag;
     this._imgUrl = imgUrl;
   }
 
@@ -101,12 +101,12 @@ export class Book {
     this._available = value;
   }
 
-  get categories(): string[] {
-    return this._categories;
+  get tag(): string[] {
+    return this._tag;
   }
 
-  set categories(value: string[]) {
-    this._categories = value;
+  set tag(value: string[]) {
+    this._tag = value;
   }
 
 
