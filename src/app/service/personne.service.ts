@@ -10,10 +10,8 @@ export class PersonneService {
   constructor(private http: HttpClient) { }
 
   newUser(personne: Personne) {
-    console.log('adding person' + personne);
-    personne.role = 'user';
-    personne.ville = 'test';
-    this.http.post(this.urlPerson, personne as Personne).subscribe(
+    console.log('adding person' + personne.address);
+    this.http.post(this.urlPerson, personne).subscribe(
       response => {
         console.log(response.toString());
       }

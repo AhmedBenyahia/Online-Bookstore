@@ -125,7 +125,7 @@ export class BooksService {
     // console.log(this.origineBooksSet.size);
   }
 
-  filterName(name: String) {
+  filterName(name: string) {
     if (this.isActivePriceFilter === false) {
       this.isActivePriceFilter = true ;
       this.booksSet.forEach( book => {
@@ -137,7 +137,7 @@ export class BooksService {
     this.booksSet.clear() ;
     this.origineBooksSet.forEach(
       (book: Book) => {
-        if ((book.title as String).includes(name)) {
+        if ((book.title as string).includes(name)) {
           this.booksSet.add(book);
         }
       }

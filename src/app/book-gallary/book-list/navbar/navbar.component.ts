@@ -13,7 +13,10 @@ import {BooksService} from '../../../service/books.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public authService: AuthService, private charService: ChartService, private router: Router, private serviceBook: BooksService) { }
+  constructor(public authService: AuthService,
+              private charService: ChartService,
+              private router: Router,
+              private serviceBook: BooksService) { }
   private chart: Book [] ;
   ngOnInit() {
     this.chart = this.charService.chart ;

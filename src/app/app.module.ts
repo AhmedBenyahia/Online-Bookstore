@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import {ListPersonneComponent} from './list-personne/list-personne.component';
 import {CarteVisiteFormComponent} from './list-personne/carte-visite-form/carte-visite-form.component';
 import {CarteVisiteComponent} from './list-personne/carte-visite/carte-visite.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BookListComponent } from './book-gallary/book-list/book-list.component';
 import { BookCartComponent } from './book-gallary/book-list/book-cart/book-cart.component';
 import { BookGallaryComponent } from './book-gallary/book-gallary.component';
@@ -17,10 +17,11 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {RefreshTokenInterceptor} from './service/refresh-token-interceptor.service';
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
-import { DminComponent } from './dmin/dmin.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {RouterModule} from '@angular/router';
+import { NewOrderComponent } from './new-order/new-order.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -36,15 +37,17 @@ import {RouterModule} from '@angular/router';
     NavbarComponent,
     LoginComponent,
     CreateAccountComponent,
-    DminComponent,
     AdminComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NewOrderComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

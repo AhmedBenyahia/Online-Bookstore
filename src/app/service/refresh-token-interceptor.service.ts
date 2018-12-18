@@ -16,15 +16,14 @@ export class RefreshTokenInterceptor implements HttpInterceptor {
     if (localStorage.getItem('token')) {
       request = request.clone({
         setHeaders: {
-          // Authorization: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWxsZSI6ImFqaW0iLCJjb2RlcG9zdGFsIjoiNDEzNSIsInN1cm5hbWUiOiJzdXJuYW1lIiwibmFtZSI6InNsYXkiLCJjaW4iOiIxMzQ2MjQ1NyIsImV4cCI6MTU0NDQwMDI5MSwidXNlcm5hbWUiOiJzYXl0byJ9.WKsof1MKlVImElOZwQoIUptl4OQuXGqAXjic778cxrM'
           Authorization: localStorage.getItem('token')
         }
       });
     }
 
     if (!(request.url.includes('/auth/renew/token') ||
-      request.url.includes('login') || request.url.includes('person/add')  )) {
-      // const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2aWxsZSI6ImFqaW0iLCJjb2RlcG9zdGFsIjoiNDEzNSIsInN1cm5hbWUiOiJzdXJuYW1lIiwibmFtZSI6InNsYXkiLCJjaW4iOiIxMzQ2MjQ1NyIsImV4cCI6MTU0NDQwMDI5MSwidXNlcm5hbWUiOiJzYXl0byJ9.WKsof1MKlVImElOZwQoIUptl4OQuXGqAXjic778cxrM';
+          request.url.includes('login') ||
+          request.url.includes('person/add')  )) {
       const token = localStorage.getItem('token');
       this.http.post('http://localhost:8080/auth/renew/token', token,
         {responseType: 'text'})

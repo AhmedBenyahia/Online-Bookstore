@@ -8,6 +8,20 @@ import {Personne} from '../model/Personne';
   styleUrls: ['./create-account.component.css']
 })
 export class CreateAccountComponent implements OnInit {
+  person: Personne = {
+      id: undefined,
+      name: '',
+      surname: '',
+      birthdate: undefined,
+      cin: '',
+      password: '',
+      village: '',
+      username: '',
+      role: '',
+      address: '',
+      postcode: '',
+      email: ''
+  };
 
   constructor(private personService: PersonneService) { }
 
@@ -15,12 +29,7 @@ export class CreateAccountComponent implements OnInit {
   }
 
 
-  submitNewUser(value: string, value2: string,
-                value3: any, value4: string,
-                value5: string, value6: string,
-                value7: string, value8: string) {
-    this.personService.newUser(
-      new Personne(value, value2, value3, value4,
-        value5, value6, value7, value8));
+  submitNewUser() {
+    this.personService.newUser(this.person);
   }
 }

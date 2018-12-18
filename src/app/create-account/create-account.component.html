@@ -1,62 +1,84 @@
 <div class="container">
-  <h2>create account</h2>
-  <form class="form-horizontal">
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="nom">Nom:</label>
-      <div class="col-sm-10">
-        <input #name type="text" class="form-control" id="nom" placeholder="your name" name="nom">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="prenom">Prenom:</label>
-      <div class="col-sm-10">
-        <input #surname type="text" class="form-control" id="prenom" placeholder="your surname" name="prenom">
-      </div>
-    </div>
-    <div class="form-group">
-      <label #date class="control-label col-sm-2" for="pwd">date of birth</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" placeholder="your birth day" name="tel">
-      </div>
-    </div>
-    <div class>>="form-group">
-      <label class="control-label col-sm-2" for="email">Adress:</label>
-      <div class="col-sm-10">
-        <input #adress class="form-control" id="email" placeholder="your adress" name="email">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="adresse">cin:</label>
-      <div class="col-sm-10">
-        <input #cin type="number" class="form-control" id="adresse" placeholder="CIN" name="adr">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="CodePostal">CodePostal:</label>
-      <div class="col-sm-10">
-        <input #code type="text" class="form-control" id="CodePostal" placeholder="Code Postal" name="username">
-      </div>
-    </div>
+  <h2>Create account</h2>
+  <form (submit)="submitNewUser()" class="form-horizontal">
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Password:</label>
       <div class="col-sm-10">
-        <input #passwd type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+        <input [(ngModel)]="person.password" type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
       </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="username">Username:</label>
+      <div  class="col-sm-10">
+        <input [(ngModel)]="person.username" type="username" class="form-control" id="username" placeholder="username" name="username">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Email:</label>
+      <div  class="col-sm-10">
+        <input [(ngModel)]="person.email" type="email" class="form-control" id="email" placeholder="email" name="email">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="person.name" type="text" class="form-control" id="name" placeholder="your name" name="name">
+      </div>
+
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="username">username:</label>
-      <div  class="col-sm-10">
-        <input #username type="password" class="form-control" id="username" placeholder="username" name="pwd">
+      <label class="control-label col-sm-2" for="surname">Surname:</label>
+      <div class="col-sm-10">
+        <input  [(ngModel)]="person.surname" type="text" class="form-control" id="surname" placeholder="your surname" name="surname">
       </div>
     </div>
+
+    <div class="form-group">
+      <label  class="control-label col-sm-2" for="pwd">date of birth</label>
+      <div class="col-sm-10">
+        <input  [(ngModel)]="person.birthdate" type="date" class="form-control" placeholder="your birth day" name="tel">
+      </div>
+
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="address">Address:</label>
+      <div class="col-sm-10">
+        <input  [(ngModel)]="person.address" class="form-control" id="address" placeholder="your address" name="address">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="cin">cin:</label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="person.cin" type="number" class="form-control" id="cin" placeholder="CIN" name="cin">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Postcode">Postcode:</label>
+      <div class="col-sm-10">
+        <input  [(ngModel)]="person.postcode" type="number" class="form-control" id="Postcode" placeholder="Postcode" name="Postcode">
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="village">village:</label>
+      <div  class="col-sm-10">
+        <input [(ngModel)]="person.village"  type='text' class="form-control" id="village" placeholder="village" name="village">
+      </div>
+    </div>
+
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="button" (click)="submitNewUser(name.value, surname.value, date.value, adress.value, cin.value, code.value, passwd.value, username.value)" class="btn btn-primary"
-                routerLink="/">Ok</button>
-        <button type="button" class="btn btn-danger" routerLink="">Cancel</button>
+        <button type="submit" class="btn btn-primary"
+                >Ok</button>
+        <button type="reset" class="btn btn-danger" routerLink="">Cancel</button>
       </div>
     </div>
   </form>

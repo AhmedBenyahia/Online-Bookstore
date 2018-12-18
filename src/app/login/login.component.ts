@@ -12,10 +12,13 @@ export class LoginComponent  {
   constructor(private authService: AuthService, private router: Router) { }
 
   login(username: String, password: String) {
-    this.authService.login(username, password);
-    if (this.authService.isLogin()) {
-      this.router.navigate(['']);
-    }
+    this.authService.login(username, password).subscribe(
+      data => {
+        if (this.authService.isLogin()) {
+          this.router.navigate(['']);
+        }
+      }
+    );
   }
 
 }

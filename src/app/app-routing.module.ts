@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import * as path from 'path';
 import {BookGallaryComponent} from './book-gallary/book-gallary.component';
 import {LoginComponent} from './login/login.component';
 import {CreateAccountComponent} from './create-account/create-account.component';

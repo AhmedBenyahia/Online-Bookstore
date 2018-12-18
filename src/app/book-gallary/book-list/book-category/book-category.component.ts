@@ -10,8 +10,8 @@ export class BookCategoryComponent {
 
   @Input('bookCategory') bookCat: string [];
   @Input('bookAuthor') bookAuth: string[];
-  private numberCheckedTag: Number = 0;
-  private numberCheckedAuthor: Number = 0;
+  private numberCheckedTag = 0;
+  private numberCheckedAuthor = 0;
 
 
   constructor(private serviceBook: BooksService) {
