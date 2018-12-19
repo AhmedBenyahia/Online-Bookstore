@@ -13,6 +13,7 @@ export interface Personne {
    address: string;
    postcode: string;
    email: string;
+  telephoneNumber: string;
 
 
 }

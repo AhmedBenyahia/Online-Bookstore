@@ -13,11 +13,12 @@ import {BooksService} from '../../../service/books.service';
 })
 export class NavbarComponent implements OnInit {
 
+  private chart = new Set() ;
+
   constructor(public authService: AuthService,
               private charService: ChartService,
               private router: Router,
               private serviceBook: BooksService) { }
-  private chart: Book [] ;
   ngOnInit() {
     this.chart = this.charService.chart ;
   }
@@ -39,5 +40,9 @@ export class NavbarComponent implements OnInit {
     } else {
       this.serviceBook.filterName(title);
     }
+  }
+
+  resetCart() {
+    this.charService.resetCart();
   }
 }

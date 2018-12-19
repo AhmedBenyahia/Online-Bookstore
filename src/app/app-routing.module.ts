@@ -5,6 +5,7 @@ import {LoginComponent} from './login/login.component';
 import {CreateAccountComponent} from './create-account/create-account.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {AdminComponent} from './admin/admin.component';
+import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 
 const routes: ({ path: string; component: any })[] = [
   {
@@ -23,6 +24,10 @@ const routes: ({ path: string; component: any })[] = [
       path: 'admin',
       component: AdminComponent
     },
+  {
+    path: 'cart',
+    component: ShoppingCartComponent
+  },
     {
       path: '**',
       component: NotFoundComponent

@@ -1,7 +1,4 @@
 
-<!--<link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/hub/1-4-0/css/style.default.css" id="theme-stylesheet">-->
-<!--<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">-->
-<!--<link href="https://d19m59y37dris4.cloudfront.net/hub/1-4-0/css/custom-fonticons.css" rel="stylesheet">-->
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <!--TODO: change icon-->
@@ -67,21 +64,27 @@
             <!-- cart item-->
             <div class="dropdown-item cart-product">
               <div class="d-flex align-items-center">
-                <!--<div class="img"><img src="https://d19m59y37dris4.cloudfront.net/hub/1-4-0/img/hoodie-man-1.png" alt="..." class="img-fluid"></div>-->
                 <div class="details  justify-content-between">
                   <div class="text" *ngFor="let char of chart">
-                    <a href="#"><strong>{{ char.title}}</strong></a>
-                    <span class="price">${{char.price}} </span>
+                    <div class=" col-sm-4">
+                      <img [src]="char.imgUrl" alt="..." class="img-fluid">
+                      <a href="#"><strong>{{ char.title}}</strong></a>
+                      <span class="price">${{char.price}} </span>
+                      <hr>
+                    </div>
+
                   </div>
                   <br>
-                  <a href="#" class="delete"><i class="fa fa-trash-o"></i></a>
                 </div>
               </div>
             </div>
             <!-- total price-->
             <div class="dropdown-item total-price d-flex justify-content-between"><span>Total</span><strong class="text-primary">${{ this.charService.totalPrice() }}</strong></div>
             <!-- call to actions-->
-            <!--<div class="dropdown-item CTA d-flex"><a href="cart.html" class="btn btn-template wide">View Cart</a><a href="checkout1.html" class="btn btn-template wide">Checkout</a></div>-->
+            <div class="dropdown-item CTA d-flex">
+              <a  routerLink="/cart" class="btn btn btn btn-outline-secondary wide">Validate Cart</a>
+              <a  (click)="resetCart()" class="btn btn btn btn-outline-secondary wide">Reset Cart</a>
+            </div>
           </div>
         </div>
       </div>
